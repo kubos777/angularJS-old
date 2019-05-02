@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="PrimerApp"> <!--Directiva para que reconoza angularJS-->
+<head>
+	<meta charset="UTF-8">
+	<title>Http</title>
+</head>
+<style>
+	.animated{
+		opacity: 1;
+		max-height: auto;
+		overflow: hidden;
+		transition: all 2s;
+
+	}
+	.animated.ng-hide{
+		opacity: 0;
+		max-height: 0px !important;
+		display: block !important;
+	}
+</style>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+<body ng-controller="ConexionController">
+	
+	<div ng-show="loading"><img src="img/platano.gif" alt=""></div>
+	<h3>Posts: </h3>
+
+	<div ng-show="posts.length<=0">No se encontraron resultados</div>
+	<ul ng-show="posts.length>0" class="animated">
+		<li ng-repeat="post in posts">
+			<h4>{{post.id}}-{{post.title}}</h4>
+			<p>
+				{{post.body}}
+			</p>
+		</li>
+	</ul>
+
+</body>
+
+</html>

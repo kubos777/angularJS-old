@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="ToDo"> <!--Directiva para que reconoza angularJS-->
+<head>
+	<meta charset="UTF-8">
+	<title>ToDo List</title>
+</head>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-local-storage.min.js"></script>
+<script src="js/controller.js"></script>
+
+<body ng-controller="ControllerToDo" ng-cloak>
+<ul >
+	<li ng-repeat="actividad in todo">
+	{{actividad.descripcion}} - {{actividad.fecha | date:'short' }}	 -  <a href="#" ng-click="removeAct(actividad)" style="color: red">X</a>
+	</li>
+</ul>
+
+<form ng-submit="addAct()">
+	<input type="text" ng-model="newAct.descripcion">
+	<input type="datetime-local" ng-model="newAct.fecha">
+
+	<input type="submit" value="Guardar actividad">
+</form>
+<button ng-click="clean()">Actividades realizadas</button>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="PrimerApp"> <!--Directiva para que reconoza angularJS-->
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Context</title>
+	<link rel="stylesheet" href="css/autocomplete-jquery-ui.structure.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/angular.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="js/autocomplete-jquery-ui.js"></script>
+	<script src="js/controller.js"></script>
+</head>
+<body ng-controller="AngularController">
+	<input type="text" my-autocomplete="repos" placeholder="Buscar repositorio">
+<ul class="no-list">
+		<li ng-repeat="repo in posts" ng-hide="main_repo && main_repo != repo.name">
+			<div class="circular" back-img="{{repo.owner.avatar_url}}">
+			</div>
+			<h4>{{repo.full_name}}</h4>
+		</li>
+	</ul>
+	<a ng-click="main_repo = null">Limpiar</a>
+</body>
+
+</html>

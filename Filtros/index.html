@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="PrimerApp"> <!--Directiva para que reconoza angularJS-->
+<head>
+	<meta charset="UTF-8">
+	<title>Controlador</title>
+</head>
+<body ng-controller="FiltrosController">
+
+	<h1>{{ nombre | removeHtml | uppercase }}</h1>
+	<h4> Pesos: {{ precio | currency }}</h4>
+	<h4>Euros: {{ euro | currency:'€' }}</h4>
+	<h4>Yuanes: {{ yuan | currency:'¥' }}</h4>
+	<h4>Libras: {{ libra | currency:'£' }}</h4>
+	
+	<pre>Domicilio: {{domicilio | json}}</pre>
+
+
+</body>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+</html>

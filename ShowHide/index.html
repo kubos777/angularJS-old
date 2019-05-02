@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="PrimerApp"> <!--Directiva para que reconoza angularJS-->
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Context</title>
+</head>
+<style>
+	.hover{
+		background-color: rgb(100,43,54);
+	}
+	.no-hover{
+		background-color: peru;
+	}
+</style>
+<body>
+
+	<!--<button ng-mouseover="bandera = true" ng-mouseout="bandera=false" > Pasa sobre mí!</button>
+	-->
+	<button ng-click="bandera = !bandera" ng-class="{'hover': bandera, 'no-hover':!bandera}" > Pasa sobre mí!</button>
+	<span ng-show="!bandera"> Haz click!</span>
+
+	<p>
+		<pre>{{ bandera | json }} </pre>
+	</p>
+
+
+</body>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+</html>

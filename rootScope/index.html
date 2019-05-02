@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="PrimerApp"> <!--Directiva para que reconoza angularJS-->
+<head>
+	<meta charset="UTF-8">
+	<title>Root Scope</title>
+</head>
+<body ng-controller="RootController">
+
+	<h3>Nombre que esta en el controller {{ nombre }} </h3>
+	<h3>Nombre del rootScope {{ $parent.nombre }} </h3>
+	<div ng-controller="NietoController">
+		<p><b>Valor del hijo: </b> {{ nombre }}</p>
+		<p><b>Valor del padre: </b>{{ $parent.nombre }}</p>
+		<p><b>Valor del abuelo: </b>{{ $parent.$parent.nombre }}</p>
+		<input type="text" ng-model="$parent.$parent.nombre">
+	</div>
+</body>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+</html>

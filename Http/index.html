@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="PrimerApp"> <!--Directiva para que reconoza angularJS-->
+<head>
+	<meta charset="UTF-8">
+	<title>Http</title>
+</head>
+<body ng-controller="ConexionController">
+	<input type="text" ng-model="nuevoPost.title">
+	<textarea cols="30" rows="10" ng-model="nuevoPost.body"></textarea>
+
+	<button ng-click="addPost()">Agregar post</button>
+	
+	<h3>Posts: </h3>
+	<ul>
+		<li ng-repeat="post in posts">
+			<h4>{{post.id}}-{{post.title}}</h4>
+			<p>
+				{{post.body}}
+			</p>
+		</li>
+	</ul>
+
+</body>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+</html>

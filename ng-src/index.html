@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="PrimerApp"> <!--Directiva para que reconoza angularJS-->
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Context</title>
+<style>
+	.circular{
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		display: inline-block;
+	}
+</style>
+</head>
+<body ng-controller="AngularController">
+<ul ng-cloak>
+		<li ng-repeat="repo in repos">
+			<div class="circular" back-img="{{repo.owner.avatar_url}}">
+			</div>
+			<h4>{{repo.id}}-{{repo.name}}</h4>
+		</li>
+	</ul>
+</body>
+<script src="js/angular.min.js"></script>
+<script src="js/controller.js"></script>
+</html>
